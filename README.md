@@ -2,14 +2,20 @@
 
 Công cụ kết nối Zalo cho các tác vụ thường dùng trên Windows và macOS. Tài khoản cá nhân sử dụng giao diện không chính thức của Zalo; tài khoản có thể bị giới hạn hoặc phiên có thể ngừng hoạt động khi Zalo thay đổi hệ thống. Zalo Official Account dùng OpenAPI của Zalo.
 
-## Bắt đầu
+## Cài trực tiếp bằng Codex
 
-Yêu cầu Node.js 20 trở lên và kho khóa hệ điều hành đang mở. Agent dùng skill trong `skill/` sẽ kiểm tra môi trường, cài CLI và hướng dẫn các bước tiếp theo. Người dùng không cần tự chạy lệnh.
+Dán câu này vào Codex:
+
+> Cài skill SlimAI Zalo Agent từ https://github.com/slimsoftvietnam/slimai-zalo-agent/tree/v0.1.1/skills/slimai-zalo-agent, kiểm tra môi trường, cài CLI và hướng dẫn tôi dùng.
+
+Codex sẽ tải skill trực tiếp từ GitHub, kiểm tra Windows/macOS, Node.js, npm và kho khóa rồi cài CLI. Bạn chỉ cần duyệt thay đổi hệ thống được đề xuất; không cần tải ZIP hoặc mở terminal. Sau khi cài skill, hãy bắt đầu lượt trò chuyện mới để Codex nhận skill.
+
+Yêu cầu Node.js 20 trở lên và kho khóa hệ điều hành đang mở.
 
 Nếu tự cài, dùng bản phát hành có gắn tag:
 
 ```bash
-npm install -g git+https://github.com/slimsoftvietnam/slimai-zalo-agent.git#v0.1.0
+npm install -g git+https://github.com/slimsoftvietnam/slimai-zalo-agent.git#v0.1.1
 slimai-zalo doctor
 slimai-zalo login
 ```
