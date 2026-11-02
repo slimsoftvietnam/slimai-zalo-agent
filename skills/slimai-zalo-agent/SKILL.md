@@ -15,7 +15,7 @@ description: Cài đặt và sử dụng SlimAI Zalo Agent trên Windows hoặc 
 
 - `slimai-zalo status`: chỉ kiểm tra phiên được lưu; lệnh cần mạng mới xác minh phiên thực tế.
 - `slimai-zalo login`: người dùng tự quét QR bằng ứng dụng Zalo trên điện thoại. Chỉ chia sẻ địa chỉ localhost hoặc ảnh QR trong phiên riêng của họ.
-- `slimai-zalo find <tên>` và `slimai-zalo groups`: xác định đúng ID trước khi gửi.
+- `slimai-zalo find <tên>` và `slimai-zalo groups`: xác định đúng ID trước khi gửi. Khi người dùng hỏi cách lấy ID hoặc chuẩn bị gửi tin, đọc [hướng dẫn ID](references/ids.md).
 - `slimai-zalo read group <id> [số tin]`: đọc lịch sử nhóm. `read user <id> [số giây]` chỉ chờ tin mới đến, không đọc lại lịch sử cá nhân.
 - `slimai-zalo send user|group <id> <nội dung>`: chỉ gửi khi yêu cầu của người dùng cho phép gửi cho đối tượng cụ thể.
 - `slimai-zalo oa setup`: người dùng nhập bí mật trên trang cục bộ, không nhập vào chat. `oa profile`, `oa send`, `oa logout` cho các tác vụ OA.

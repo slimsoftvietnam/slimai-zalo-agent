@@ -6,7 +6,7 @@ Công cụ kết nối Zalo cho các tác vụ thường dùng trên Windows và
 
 Dán câu này vào Codex:
 
-> Cài skill SlimAI Zalo Agent từ https://github.com/slimsoftvietnam/slimai-zalo-agent/tree/v0.1.1/skills/slimai-zalo-agent, kiểm tra môi trường, cài CLI và hướng dẫn tôi dùng.
+> Cài skill SlimAI Zalo Agent từ https://github.com/slimsoftvietnam/slimai-zalo-agent/tree/v0.1.2/skills/slimai-zalo-agent, kiểm tra môi trường, cài CLI và hướng dẫn tôi dùng.
 
 Codex sẽ tải skill trực tiếp từ GitHub, kiểm tra Windows/macOS, Node.js, npm và kho khóa rồi cài CLI. Bạn chỉ cần duyệt thay đổi hệ thống được đề xuất; không cần tải ZIP hoặc mở terminal. Sau khi cài skill, hãy bắt đầu lượt trò chuyện mới để Codex nhận skill.
 
@@ -15,7 +15,7 @@ Yêu cầu Node.js 20 trở lên và kho khóa hệ điều hành đang mở.
 Nếu tự cài, dùng bản phát hành có gắn tag:
 
 ```bash
-npm install -g git+https://github.com/slimsoftvietnam/slimai-zalo-agent.git#v0.1.1
+npm install -g git+https://github.com/slimsoftvietnam/slimai-zalo-agent.git#v0.1.2
 slimai-zalo doctor
 slimai-zalo login
 ```
@@ -43,6 +43,35 @@ slimai-zalo oa logout                      Xóa khóa OA
 ```
 
 Thêm `--json` để nhận đầu ra JSON. Tin nhắn cá nhân chỉ đọc được khi mới đến trong lúc lệnh `read user` đang chạy; hiện chưa hỗ trợ đọc lại lịch sử cá nhân. Lịch sử nhóm tùy thuộc dữ liệu Zalo cung cấp. Token OA cần được cấp sẵn qua Zalo Developers và có thể hết hạn; khi đó chạy `oa setup` để nhập token mới. Chức năng OA phụ thuộc quyền của OA và giới hạn của Zalo.
+
+## User ID và Group ID là gì?
+
+ID là mã định danh mà Zalo dùng để chọn đúng người hoặc nhóm. **User ID** chỉ một tài khoản cá nhân; **Group ID** chỉ một nhóm. Chúng khác tên hiển thị và không phải số điện thoại. Tên có thể trùng hoặc đổi, còn các lệnh `read` và `send` cần ID để xác định hội thoại.
+
+Sau khi đăng nhập bằng QR, tìm một người đã có trong danh sách bạn bè hoặc một nhóm theo tên:
+
+```bash
+slimai-zalo find "Lan"
+slimai-zalo find "Marketing"
+```
+
+Kết quả có dạng `{"type":"user","id":"123...","name":"Lan"}` hoặc `{"type":"group","id":"456...","name":"Marketing"}`. Trường `type` cho biết dùng lệnh `user` hay `group`; sao chép chính xác giá trị `id`. Muốn xem toàn bộ nhóm và Group ID, dùng:
+
+```bash
+slimai-zalo groups
+```
+
+Sau khi đối chiếu tên và ID, có thể dùng như sau:
+
+```bash
+slimai-zalo read group 456... 10
+slimai-zalo send group 456... "Chiều nay họp lúc 3 giờ"
+slimai-zalo send user 123... "Xin chào Lan"
+```
+
+Các ID trên chỉ là ví dụ, không phải ID dùng được. Lệnh `find` chỉ tìm trong **bạn bè và nhóm của tài khoản đã đăng nhập**; không tìm mọi người dùng Zalo. Nếu có nhiều người hoặc nhóm trùng tên, kiểm tra lại trước khi gửi. Không tự đoán ID từ tên hay số điện thoại. Không công khai danh sách ID và tin nhắn vì đó là dữ liệu liên quan đến người khác.
+
+**OA User ID là mã riêng trong ngữ cảnh Official Account.** Lệnh `slimai-zalo oa send` cần ID người đã tương tác với OA, lấy từ sự kiện/webhook hoặc dữ liệu người dùng của OA mà bạn được phép truy cập. Không dùng User ID tìm bằng `slimai-zalo find` để thay thế OA User ID. CLI bản này chưa có lệnh liệt kê người dùng OA; nếu chưa có OA User ID, hãy lấy từ hệ thống OA trước khi gửi.
 
 ## Bảo mật
 
