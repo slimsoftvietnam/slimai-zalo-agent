@@ -1,0 +1,13 @@
+{
+  "name": "slimai-zalo-agent",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "bin": { "slimai-zalo": "src/cli.js" },
+  "scripts": { "test": "node --test", "check": "node --check src/cli.js" },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@napi-rs/keyring": "2.1.2",
+    "zca-js": "2.2.0"
+  }
+}
