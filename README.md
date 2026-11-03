@@ -6,7 +6,7 @@ Công cụ kết nối Zalo cho các tác vụ thường dùng trên Windows và
 
 Dán câu này vào Codex:
 
-> Cài skill SlimAI Zalo Agent từ https://github.com/slimsoftvietnam/slimai-zalo-agent/tree/v0.1.2/skills/slimai-zalo-agent, kiểm tra môi trường, cài CLI và hướng dẫn tôi dùng.
+> Cài skill SlimAI Zalo Agent từ https://github.com/slimsoftvietnam/slimai-zalo-agent/tree/v0.1.3/skills/slimai-zalo-agent, kiểm tra môi trường, cài CLI và hướng dẫn tôi dùng.
 
 Codex sẽ tải skill trực tiếp từ GitHub, kiểm tra Windows/macOS, Node.js, npm và kho khóa rồi cài CLI. Bạn chỉ cần duyệt thay đổi hệ thống được đề xuất; không cần tải ZIP hoặc mở terminal. Sau khi cài skill, hãy bắt đầu lượt trò chuyện mới để Codex nhận skill.
 
@@ -15,12 +15,12 @@ Yêu cầu Node.js 20 trở lên và kho khóa hệ điều hành đang mở.
 Nếu tự cài, dùng bản phát hành có gắn tag:
 
 ```bash
-npm install -g git+https://github.com/slimsoftvietnam/slimai-zalo-agent.git#v0.1.2
+npm install -g git+https://github.com/slimsoftvietnam/slimai-zalo-agent.git#v0.1.3
 slimai-zalo doctor
 slimai-zalo login
 ```
 
-`login` in địa chỉ trang QR cục bộ. Mở trang đó trên máy tính và quét bằng ứng dụng Zalo trên điện thoại. Không gửi mã QR hoặc cookie cho người khác.
+`login` in địa chỉ trang QR cục bộ. Mở trang đó trên máy tính và quét bằng ứng dụng Zalo trên điện thoại. Trang QR tự đóng sau khi lệnh kết thúc; hãy xem kết quả của lệnh và chạy `slimai-zalo status` để kiểm tra phiên đã lưu. Nếu trang báo đã đóng, riêng thông báo đó không xác nhận đăng nhập thành công. Không gửi mã QR hoặc cookie cho người khác.
 
 ## Lệnh
 
