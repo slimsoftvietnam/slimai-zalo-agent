@@ -1,0 +1,4 @@
+interface:
+  display_name: "SlimAI Zalo Agent"
+  short_description: "Cài Zalo CLI, gửi tin và theo dõi phản hồi"
+  default_prompt: "Dùng $slimai-zalo-agent để kiểm tra cài đặt và hướng dẫn tôi bắt đầu dùng Zalo từng bước."

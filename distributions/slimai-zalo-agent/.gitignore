@@ -1,0 +1,17 @@
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+*.jsonl
+*.lock.tmp
+installation.json
+accounts.json
+cred_*.json
+auth/
+zalo-replies/
+opt-outs.json
+dispatch.lock
+listener.lock
+tools/
+runtime/

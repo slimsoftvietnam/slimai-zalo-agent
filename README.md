@@ -1,5 +1,17 @@
 # SlimAI Zalo Agent
 
+## Bộ skill độc lập 1.0.0 cho Windows
+
+Đã có thêm bản skill đóng gói với bộ cài tự động, hướng dẫn trực quan, gửi text trước ảnh, nhật ký chống gửi trùng và theo dõi phản hồi.
+
+- [Tải bộ skill ZIP 1.0.0](distributions/slimai-zalo-agent/downloads/slimai-zalo-agent-1.0.0.zip).
+- [Hướng dẫn cài và sử dụng](distributions/slimai-zalo-agent/README.md).
+- [Mã nguồn và SKILL.md](distributions/slimai-zalo-agent/SKILL.md).
+
+Giải nén ZIP, chạy `INSTALL.cmd`, rồi mở chat mới trong Codex và nhập `Dùng $slimai-zalo-agent giúp tôi bắt đầu.` Bộ cài tự chuẩn bị Node.js 24 LTS và thư viện; người dùng quét QR trên điện thoại để đăng nhập.
+
+Gói độc lập dùng runtime và thư mục dữ liệu riêng tại `%LOCALAPPDATA%\SlimAI\ZaloAgent`. Phiên tài khoản của gói này được lưu dạng JSON trong thư mục giới hạn ACL trên Windows; cần bảo vệ thư mục dữ liệu. Hướng dẫn CLI 0.1.3 và cơ chế lưu phiên trong kho khóa hệ điều hành nằm ở các phần bên dưới.
+
 Công cụ kết nối Zalo cho các tác vụ thường dùng trên Windows và macOS. Tài khoản cá nhân sử dụng giao diện không chính thức của Zalo; tài khoản có thể bị giới hạn hoặc phiên có thể ngừng hoạt động khi Zalo thay đổi hệ thống. Zalo Official Account dùng OpenAPI của Zalo.
 
 ## Cài trực tiếp bằng Codex
